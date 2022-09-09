@@ -1,0 +1,19 @@
+{
+  "name": "calculator-app-main",
+  "version": "1.0.0",
+  "source": "index.html",
+  "browsersList": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Prince Roy",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.54.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}
