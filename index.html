@@ -13,9 +13,55 @@
 		<!-- Main Script -->
 		<script src="./src/js/controller.js"></script>
 
-		<title>Frontend Mentor | Calculator app</title>
+		<title>Calculator app</title>
 	</head>
 	<body>
+		<header>
+			<h1 class="visually_hidden">Calculator</h1>
+		</header>
+
+		<main class="calculator">
+			<div class="calculator__head">
+				<span class="">calc</span>
+				<article class="themes calculator__head__themes">
+					<h2>theme</h2>
+					<div class="options themes__options">
+						<label for="option-1">1</label>
+						<label for="option-2">2</label>
+						<label for="option-3">3</label>
+						<input type="radio" id="option-1" />
+						<input type="radio" id="option-2" />
+						<input type="radio" id="option-3" />
+					</div>
+				</article>
+			</div>
+
+			<div class="calculator__result">
+				<p></p>
+			</div>
+
+			<div class="calculator__btns">
+				<button class="btn" type="button">8</button>
+				<button class="btn" type="button">9</button>
+				<button class="btn" type="button">DEL</button>
+				<button class="btn" type="button">4</button>
+				<button class="btn" type="button">5</button>
+				<button class="btn" type="button">6</button>
+				<button class="btn" type="button">+</button>
+				<button class="btn" type="button">1</button>
+				<button class="btn" type="button">2</button>
+				<button class="btn" type="button">3</button>
+				<button class="btn" type="button">-</button>
+				<button class="btn" type="button">.</button>
+				<button class="btn" type="button">0</button>
+				<button class="btn" type="button">7</button>
+				<button class="btn" type="button">/</button>
+				<button class="btn" type="button">x</button>
+				<button class="btn" type="button">RESET</button>
+				<button class="btn" type="button">=</button>
+			</div>
+		</main>
+
 		<!-- <div class="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
