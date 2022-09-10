@@ -11,54 +11,60 @@
 		<link rel="stylesheet" href="./src/sass/index.scss" />
 
 		<!-- Main Script -->
-		<script src="./src/js/controller.js"></script>
+		<script src="./src/js/index.js"></script>
 
 		<title>Calculator app</title>
 	</head>
+
 	<body>
 		<header>
 			<h1 class="visually_hidden">Calculator</h1>
 		</header>
 
 		<main class="calculator">
-			<div class="calculator__head">
+			<div class="toggle calculator__head">
 				<span class="">calc</span>
-				<article class="themes calculator__head__themes">
+				<article class="themes toggle__themes">
 					<h2>theme</h2>
 					<div class="options themes__options">
-						<label for="option-1">1</label>
-						<label for="option-2">2</label>
-						<label for="option-3">3</label>
-						<input type="radio" id="option-1" />
-						<input type="radio" id="option-2" />
-						<input type="radio" id="option-3" />
+						<div class="options__labels">
+							<label for="option-1">1</label>
+							<label for="option-2">2</label>
+							<label for="option-3">3</label>
+						</div>
+
+						<div class="radio_btns">
+							<input class="radio" type="radio" id="option-1" />
+							<input class="radio" type="radio" id="option-2" />
+							<input class="radio" type="radio" id="option-3" />
+						</div>
 					</div>
 				</article>
 			</div>
 
 			<div class="calculator__result">
-				<p></p>
+				<p>399,981</p>
 			</div>
 
-			<div class="calculator__btns">
-				<button class="btn" type="button">8</button>
-				<button class="btn" type="button">9</button>
-				<button class="btn" type="button">DEL</button>
-				<button class="btn" type="button">4</button>
-				<button class="btn" type="button">5</button>
-				<button class="btn" type="button">6</button>
-				<button class="btn" type="button">+</button>
-				<button class="btn" type="button">1</button>
-				<button class="btn" type="button">2</button>
-				<button class="btn" type="button">3</button>
-				<button class="btn" type="button">-</button>
-				<button class="btn" type="button">.</button>
-				<button class="btn" type="button">0</button>
-				<button class="btn" type="button">7</button>
-				<button class="btn" type="button">/</button>
-				<button class="btn" type="button">x</button>
-				<button class="btn" type="button">RESET</button>
-				<button class="btn" type="button">=</button>
+			<div class="keypad calculator__keypad">
+				<button class="key" type="button">7</button>
+				<button class="key" type="button">8</button>
+				<button class="key" type="button">9</button>
+				<button class="key delete" type="button">DEL</button>
+				<button class="key" type="button">4</button>
+				<button class="key" type="button">5</button>
+				<button class="key" type="button">6</button>
+				<button class="key" type="button">+</button>
+				<button class="key" type="button">1</button>
+				<button class="key" type="button">2</button>
+				<button class="key" type="button">3</button>
+				<button class="key" type="button">-</button>
+				<button class="key" type="button">.</button>
+				<button class="key" type="button">0</button>
+				<button class="key" type="button">/</button>
+				<button class="key" type="button">x</button>
+				<button class="key reset" type="button">RESET</button>
+				<button class="key equal" type="button">=</button>
 			</div>
 		</main>
 
