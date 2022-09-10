@@ -14,8 +14,100 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var.$very-dark-desaturated-blue;
+	background-color: var.$very-dark-desaturated-blue-main;
+	font-family: var.$font-family;
+	color: white;
+	font-size: var.$font-size;
 }
 
 .visually_hidden {
+	font-size: 0;
+}
+
+.calculator {
+	//width: 90%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 1rem;
+	border: 2px solid white;
+}
+
+.calculator__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.themes {
+		display: flex;
+		gap: 2rem;
+		align-items: flex-end;
+
+		h2 {
+			font-size: 0.9rem;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		.options__labels {
+			font-size: 1rem;
+		}
+
+		.radio_btns {
+			background-color: var.$very-dark-desaturated-blue-toggle;
+		}
+	}
+}
+
+.calculator__result {
+	padding: 2rem;
+	background-color: var.$very-dark-desaturated-blue-screen;
+	border: none;
+	border-radius: 10px;
+
+	p {
+		text-align: right;
+	}
+}
+
+.calculator__keypad {
+	padding: 1.2rem;
+	background-color: var.$very-dark-desaturated-blue-toggle;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border-radius: 10px;
+	column-gap: 0.7rem;
+	row-gap: 1rem;
+
+	.key {
+		padding-block: 0.9rem;
+		padding-inline: 1.2rem;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.2rem;
+		color: var.$very-dark-grayish-blue;
+		font-weight: var.$fw-700;
+		box-shadow: 0 4px 0px 0.2px var.$grayish;
+		background-color: var.$light-grayish;
+	}
+
+	.delete {
+		color: var.$white;
+		background-color: var.$desaturated-dark-blue-key-bg;
+		box-shadow: 0 4px 0px 0.2px var.$desaturated-dark-blue-key-shadow;
+	}
+
+	.reset {
+		grid-area: 5 / 1 / span 1 / span 2;
+		color: var.$white;
+		background-color: var.$desaturated-dark-blue-key-bg;
+		box-shadow: 0 4px 0px 0.2px var.$desaturated-dark-blue-key-shadow;
+	}
+
+	.equal {
+		grid-area: 5 / 3 / span 1 / span 2;
+		background-color: var.$red;
+		color: var.$white;
+		box-shadow: 0 4px 0px 0.2px var.$dark-red;
+	}
 }
