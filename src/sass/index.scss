@@ -1,4 +1,4 @@
-@use './variables' as var;
+@use 'variables' as var;
 
 *,
 *:before,
@@ -30,7 +30,6 @@ body {
 	flex-direction: column;
 	gap: 1.5rem;
 	margin: 1rem;
-	border: 2px solid white;
 }
 
 .calculator__head {
@@ -64,9 +63,18 @@ body {
 	background-color: var.$very-dark-desaturated-blue-screen;
 	border: none;
 	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	height: 7.5rem;
 
-	p {
-		text-align: right;
+	@media (min-width: 45rem) {
+		padding: 2.5rem;
+		font-size: 3rem;
+	}
+
+	div:first-child {
+		font-size: 1rem;
 	}
 }
 
@@ -79,22 +87,45 @@ body {
 	column-gap: 0.7rem;
 	row-gap: 1rem;
 
+	@media (min-width: 45rem) {
+		padding: 2rem;
+		gap: 1.5rem;
+	}
+
 	.key {
 		padding-block: 0.9rem;
 		padding-inline: 1.2rem;
 		border: none;
-		border-radius: 5px;
+		outline: 3px solid transparent;
+		border-radius: 10px;
 		font-size: 1.2rem;
 		color: var.$very-dark-grayish-blue;
+		font-family: var.$font-family;
 		font-weight: var.$fw-700;
 		box-shadow: 0 4px 0px 0.2px var.$grayish;
 		background-color: var.$light-grayish;
+
+		&:hover,
+		&:active {
+			filter: brightness(125%);
+		}
+
+		@media (min-width: 45rem) {
+			font-size: 2.5rem;
+			padding-block-start: 1rem;
+			padding-block-end: 0.5rem;
+			padding-inline: 1.8rem;
+		}
 	}
 
 	.delete {
 		color: var.$white;
 		background-color: var.$desaturated-dark-blue-key-bg;
 		box-shadow: 0 4px 0px 0.2px var.$desaturated-dark-blue-key-shadow;
+
+		@media (min-width: 45rem) {
+			font-size: 1.9rem;
+		}
 	}
 
 	.reset {
@@ -102,6 +133,10 @@ body {
 		color: var.$white;
 		background-color: var.$desaturated-dark-blue-key-bg;
 		box-shadow: 0 4px 0px 0.2px var.$desaturated-dark-blue-key-shadow;
+
+		@media (min-width: 45rem) {
+			font-size: 1.9rem;
+		}
 	}
 
 	.equal {
