@@ -10,6 +10,8 @@
   "author": "Prince Roy",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.25.1",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.54.9"
   },
   "devDependencies": {
