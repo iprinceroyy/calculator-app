@@ -10,9 +10,6 @@
 		<!-- Main Stylesheet -->
 		<link rel="stylesheet" href="./src/sass/index.scss" />
 
-		<!-- Main Script -->
-		<script src="./src/js/index.js"></script>
-
 		<title>Calculator app</title>
 	</head>
 
@@ -43,28 +40,29 @@
 			</div>
 
 			<div class="calculator__result">
-				<p>399,981</p>
+				<div data-previous-operand></div>
+				<div data-current-operand></div>
 			</div>
 
 			<div class="keypad calculator__keypad">
-				<button class="key" type="button">7</button>
-				<button class="key" type="button">8</button>
-				<button class="key" type="button">9</button>
-				<button class="key delete" type="button">DEL</button>
-				<button class="key" type="button">4</button>
-				<button class="key" type="button">5</button>
-				<button class="key" type="button">6</button>
-				<button class="key" type="button">+</button>
-				<button class="key" type="button">1</button>
-				<button class="key" type="button">2</button>
-				<button class="key" type="button">3</button>
-				<button class="key" type="button">-</button>
-				<button class="key" type="button">.</button>
-				<button class="key" type="button">0</button>
-				<button class="key" type="button">/</button>
-				<button class="key" type="button">x</button>
-				<button class="key reset" type="button">RESET</button>
-				<button class="key equal" type="button">=</button>
+				<button class="key" type="button" value="7" data-number>7</button>
+				<button class="key" type="button" value="8" data-number>8</button>
+				<button class="key" type="button" value="9" data-number>9</button>
+				<button class="key delete" type="button" value="DEL" data-delete>DEL</button>
+				<button class="key" type="button" value="5" data-number>5</button>
+				<button class="key" type="button" value="6" data-number>6</button>
+				<button class="key" type="button" value="+" data-operation>+</button>
+				<button class="key" type="button" value="4" data-number>4</button>
+				<button class="key" type="button" value="1" data-number>1</button>
+				<button class="key" type="button" value="2" data-number>2</button>
+				<button class="key" type="button" value="3" data-number>3</button>
+				<button class="key" type="button" value="-" data-operation>-</button>
+				<button class="key" type="button" value="x" data-operation>x</button>
+				<button class="key" type="button" value="." data-number>.</button>
+				<button class="key" type="button" value="0" data-number>0</button>
+				<button class="key" type="button" value="/" data-operation>/</button>
+				<button class="key reset" type="button" value="RESET" data-reset>RESET</button>
+				<button class="key equal" type="button" value="=" data-equals>=</button>
 			</div>
 		</main>
 
@@ -73,5 +71,7 @@
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
 			Coded by <a href="#">Your Name Here</a>.
 		</div> -->
+		<!-- Main Script -->
+		<script defer src="./src/js/index.js"></script>
 	</body>
 </html>
