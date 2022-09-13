@@ -63,3 +63,23 @@ class App extends Calculator {
 }
 
 const calculator = new App(prevOperandTextEl, currOperandTextEl);
+
+const radioBtns = document.querySelector('.radio_btns');
+
+radioBtns.addEventListener('input', e => {
+	if (!e.target.classList.contains('radio')) return;
+
+	const num = e.target.dataset.theme;
+	console.log(num);
+
+	console.log(e.target.closest('.radio_btns').lastElementChild);
+
+	e.target.closest(
+		'.radio_btns',
+	).lastElementChild.style.transform = `translateX(${1.5 * num - 1.2}rem)`;
+
+	document.querySelector('body').classList.remove('theme-1');
+	document.querySelector('body').classList.remove('theme-2');
+	document.querySelector('body').classList.remove('theme-3');
+	document.querySelector('body').classList.add(`theme-${num}`);
+});
