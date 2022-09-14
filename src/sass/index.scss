@@ -24,11 +24,15 @@ body {
 }
 
 .calculator {
-	width: min(87%, 580px);
+	width: min(87%, 555px);
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 	margin: 1rem;
+
+	@media (min-width: 45rem) {
+		margin-block-start: 2.5rem;
+	}
 }
 
 .calculator__head {
@@ -42,10 +46,11 @@ body {
 		align-items: center;
 
 		h2 {
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 			letter-spacing: 1px;
 			text-transform: uppercase;
 			padding-block-start: 1.2rem;
+			opacity: 0.9;
 		}
 
 		.options__labels {
@@ -120,6 +125,7 @@ body {
 	@media (min-width: 45rem) {
 		padding: 2.5rem;
 		font-size: 3rem;
+		height: 7.5rem;
 	}
 
 	div:first-child {
