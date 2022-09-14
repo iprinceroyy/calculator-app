@@ -170,20 +170,20 @@ body {
 		}
 	}
 
-	.delete {
+	.key_delete {
 		@media (min-width: 45rem) {
 			font-size: 1.9rem;
 		}
 	}
 
-	.reset {
+	.key_reset {
 		grid-area: 5 / 1 / span 1 / span 2;
 		@media (min-width: 45rem) {
 			font-size: 1.9rem;
 		}
 	}
 
-	.equal {
+	.key_equal {
 		grid-area: 5 / 3 / span 1 / span 2;
 	}
 }

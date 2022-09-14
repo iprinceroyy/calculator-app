@@ -4,53 +4,51 @@ class Calculator {
 	operation;
 	prevOperandTextEl;
 	currOperandTextEl;
+	prevOperator = '';
 
 	constructor(prevOperandTextEl, currOperandTextEl) {
 		this.prevOperandTextEl = prevOperandTextEl;
 		this.currOperandTextEl = currOperandTextEl;
 	}
 
-	reset() {
+	_reset() {
 		this.currentOperand = '';
 		this.previousOperand = '';
-		this.operation = undefined;
+		this.operator = undefined;
 	}
 
-	delete() {
+	_delete() {
 		this.currentOperand = this.currentOperand.slice(0, -1);
 	}
 
-	appendNumber(number) {
+	_appendNumber(number) {
 		// Avoid multiple '.'
 		if (this.currentOperand.includes('.') && number === '.') return;
 
 		// Put zero in front of '.' if not specified
-		if (!this.currentOperand) this.currentOperand += 0;
+		if (number === '.' && !this.previousOperand && !this.currentOperand) this.currentOperand += 0;
 
 		this.currentOperand += number;
 	}
 
-	chooseOperation(operation) {
-		// If currentOperand is empty
-		if (!this.currentOperand) return;
-
+	_chooseOperation(operator) {
 		// If previous value exist then calculate first it
-		this.previousOperand && this.calculate();
+		this.previousOperand && this._calculate();
 
-		this.operation = operation;
-		this.previousOperand = this.currentOperand;
+		this.operator = operator;
+		// If current operand is type
+		if (this.currentOperand !== '') this.previousOperand = this.currentOperand;
 		this.currentOperand = '';
 	}
 
-	calculate() {
+	_calculate() {
 		let computation;
-		const prev = +this.previousOperand;
-		const curr = +this.currentOperand;
-		console.log(prev, curr);
+		const prev = parseFloat(this.previousOperand);
+		const curr = parseFloat(this.currentOperand);
 
 		if (isNaN(prev) || isNaN(curr)) return;
 
-		switch (this.operation) {
+		switch (this.operator) {
 			case '+':
 				computation = prev + curr;
 				break;
@@ -71,11 +69,11 @@ class Calculator {
 		}
 
 		this.currentOperand = '' + Math.round((computation + Number.EPSILON) * 100) / 100;
-		this.operation = undefined;
+		this.operator = undefined;
 		this.previousOperand = '';
 	}
 
-	formatNumber(number) {
+	_formatNumber(number) {
 		const integerDigits = parseFloat(number.split('.')[0]);
 		const decimalDigits = number.split('.')[1];
 
@@ -87,11 +85,11 @@ class Calculator {
 		return decimalDigits != null ? `${integerDisplay}.${decimalDigits}` : integerDisplay;
 	}
 
-	updateDisplay() {
-		this.currOperandTextEl.innerText = this.formatNumber(this.currentOperand);
+	_updateDisplay() {
+		this.currOperandTextEl.innerText = this._formatNumber(this.currentOperand);
 
 		this.prevOperandTextEl.innerText =
-			this.operation != null ? `${this.formatNumber(this.previousOperand)} ${this.operation}` : '';
+			this.operator != null ? `${this._formatNumber(this.previousOperand)} ${this.operator}` : '';
 	}
 }
 

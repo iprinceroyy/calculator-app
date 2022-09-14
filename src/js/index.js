@@ -1,85 +1,77 @@
+import Calculator from './calculator';
 console.log('started.......');
-const numBtns = document.querySelectorAll('[data-number]');
-const operationBtns = document.querySelectorAll('[data-operation]');
-const equalsBtn = document.querySelector('[data-equals]');
-const resetBtn = document.querySelector('[data-reset]');
-const deleteBtn = document.querySelector('[data-delete]');
+
 const prevOperandTextEl = document.querySelector('[data-previous-operand]');
 const currOperandTextEl = document.querySelector('[data-current-operand]');
+const toggler = document.querySelector('.radio_btns');
+const bodyContainer = document.querySelector('body');
 
-import Calculator from './calculator';
-// window.navigator.vibrate(200)
-const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/387');
+const keypad = document.querySelector('.keypad');
+
+const btnAudio = new Audio('https://www.fesliyanstudios.com/play-mp3/641');
+const toggleAudio = new Audio('https://www.fesliyanstudios.com/play-mp3/2886');
+
 class App extends Calculator {
 	constructor(prevOperandTextEl, currOperandTextEl) {
 		super(prevOperandTextEl, currOperandTextEl);
 
-		numBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				audio.play();
-				super.appendNumber(btn.value);
-				super.updateDisplay();
-			});
-		});
+		toggler.addEventListener('input', this._toggleHandler.bind(this));
+		keypad.addEventListener('click', this._keyHandler.bind(this));
+		document.addEventListener('keydown', this._keydownHanlder.bind(this));
+	}
 
-		operationBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				console.log(btn);
-				audio.play();
-				super.chooseOperation(btn.value);
-				super.updateDisplay();
-			});
-		});
+	_keyHandler(e) {
+		// Add audio to all buttons
+		btnAudio.play();
+		const btn = e.target;
 
-		equalsBtn.addEventListener('click', () => {
-			audio.play();
-			super.calculate();
-			super.updateDisplay();
-		});
+		if (btn.classList.contains('key_num')) {
+			super._appendNumber(btn.textContent);
+			super._updateDisplay();
+		} else if (btn.classList.contains('key_operation')) {
+			super._chooseOperation(btn.textContent);
+			super._updateDisplay();
+		} else if (btn.classList.contains('key_equal')) {
+			super._calculate();
+			super._updateDisplay();
+		} else if (btn.classList.contains('key_reset')) {
+			super._reset();
+			super._updateDisplay();
+		} else if (btn.classList.contains('key_delete')) {
+			super._delete();
+			super._updateDisplay();
+		}
+	}
 
-		resetBtn.addEventListener('click', () => {
-			audio.play();
-			super.reset();
-			super.updateDisplay();
-		});
+	_keydownHanlder(e) {
+		btnAudio.play();
 
-		deleteBtn.addEventListener('click', () => {
-			audio.play();
-			super.delete();
-			super.updateDisplay();
-		});
+		if (isFinite(e.key)) super.appendNumber(e.key);
+		else if ('+-*/'.includes(e.key)) super.chooseOperation(e.key);
+		else if (e.key === '=' || e.key === 'Enter') super.calculate();
+		else if (e.key === 'Delete') super.reset();
+		else if (e.key === 'Backspace') super.delete();
 
-		document.addEventListener('keydown', e => {
-			audio.play();
-			if (isFinite(e.key)) super.appendNumber(e.key);
-			if ('+-*/'.includes(e.key)) super.chooseOperation(e.key);
-			if (e.key === '=' || e.key === 'Enter') super.calculate();
-			if (e.key === 'Delete') super.reset();
-			if (e.key === 'Backspace') super.delete();
+		super.updateDisplay();
+	}
 
-			super.updateDisplay();
-		});
+	_toggleHandler(e) {
+		toggleAudio.play();
+		const btn = e.target;
+		if (!btn.classList.contains('radio')) return;
+
+		const themeNum = btn.dataset.theme;
+
+		btn.closest('.radio_btns').lastElementChild.style.transform = `translateX(${
+			1.5 * themeNum - 1.2
+		}rem)`;
+
+		// Remove previous theme before adding new one
+		bodyContainer.classList.value = '';
+
+		// Add current theme
+		bodyContainer.classList.add(`theme-${themeNum}`);
 	}
 }
 
 const calculator = new App(prevOperandTextEl, currOperandTextEl);
-
-const radioBtns = document.querySelector('.radio_btns');
-
-radioBtns.addEventListener('input', e => {
-	if (!e.target.classList.contains('radio')) return;
-
-	const num = e.target.dataset.theme;
-	console.log(num);
-
-	console.log(e.target.closest('.radio_btns').lastElementChild);
-
-	e.target.closest(
-		'.radio_btns',
-	).lastElementChild.style.transform = `translateX(${1.5 * num - 1.2}rem)`;
-
-	document.querySelector('body').classList.remove('theme-1');
-	document.querySelector('body').classList.remove('theme-2');
-	document.querySelector('body').classList.remove('theme-3');
-	document.querySelector('body').classList.add(`theme-${num}`);
-});
