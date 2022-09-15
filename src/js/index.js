@@ -28,7 +28,7 @@ class App extends Calculator {
 		if (!e.target.classList.contains('key')) return;
 
 		// Add audio to all buttons
-		btnAudio.volume = 0.08;
+		btnAudio.volume = 0.06;
 		btnAudio.play();
 		const btn = e.target;
 
