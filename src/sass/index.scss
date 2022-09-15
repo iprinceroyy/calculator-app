@@ -36,6 +36,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-inline: 0.5rem;
 
 	span {
 		margin-block-start: 0.7rem;
@@ -126,7 +127,7 @@ body {
 	@media (min-width: 45rem) {
 		padding: 2.5rem;
 		font-size: 3.4rem;
-		height: 7.8rem;
+		height: 7.81rem;
 	}
 
 	div:first-child {
@@ -145,7 +146,7 @@ body {
 
 	@media (min-width: 45rem) {
 		padding: 2rem;
-		row-gap: 1.7rem;
+		row-gap: 1.71rem;
 		column-gap: 1.5rem;
 	}
 
