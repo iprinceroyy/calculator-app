@@ -28,7 +28,7 @@ class App extends Calculator {
 		if (!e.target.classList.contains('key')) return;
 
 		// Add audio to all buttons
-		btnAudio.volume = 0.1;
+		btnAudio.volume = 0.09;
 		btnAudio.play();
 		const btn = e.target;
 
@@ -65,7 +65,7 @@ class App extends Calculator {
 		const btn = e.target;
 		if (!btn.classList.contains('radio')) return;
 
-		toggleAudio.volume = 0.1;
+		toggleAudio.volume = 0.09;
 		toggleAudio.play();
 		const themeNum = btn.dataset.theme;
 
