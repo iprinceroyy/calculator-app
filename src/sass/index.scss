@@ -29,10 +29,6 @@ body {
 	flex-direction: column;
 	gap: 1.5rem;
 	margin: 1rem;
-
-	@media (min-width: 45rem) {
-		margin-block-start: 2.5rem;
-	}
 }
 
 .calculator__head {
