@@ -120,7 +120,7 @@ body {
 
 	@media (min-width: 45rem) {
 		padding: 2.5rem;
-		font-size: 3rem;
+		font-size: 3.4rem;
 		height: 7.5rem;
 	}
 
@@ -140,12 +140,13 @@ body {
 
 	@media (min-width: 45rem) {
 		padding: 2rem;
-		gap: 1.5rem;
+		row-gap: 1.8rem;
+		column-gap: 1.5rem;
 	}
 
 	.key {
 		padding-block: 1rem;
-		//padding-inline: 0.5rem;
+		//padding-inline: rem;
 		border: none;
 		outline: 3px solid transparent;
 		border-radius: 5px;
@@ -181,7 +182,7 @@ body {
 	.key_delete {
 		font-size: 1.3rem;
 		@media (min-width: 45rem) {
-			font-size: 1.9rem;
+			font-size: 1.8rem;
 		}
 	}
 
@@ -189,7 +190,7 @@ body {
 		font-size: 1.3rem;
 		grid-area: 5 / 1 / span 1 / span 2;
 		@media (min-width: 45rem) {
-			font-size: 1.9rem;
+			font-size: 1.8rem;
 		}
 	}
 
