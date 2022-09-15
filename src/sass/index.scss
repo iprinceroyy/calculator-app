@@ -27,7 +27,8 @@ body {
 	width: min(87%, 555px);
 	display: flex;
 	flex-direction: column;
-	gap: 1.7rem;
+	//gap: 1.5rem;
+	gap: 1.75rem;
 	margin: 1rem;
 }
 
@@ -35,6 +36,10 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	span {
+		margin-block-start: 0.7rem;
+	}
 
 	.themes {
 		display: flex;
@@ -121,7 +126,7 @@ body {
 	@media (min-width: 45rem) {
 		padding: 2.5rem;
 		font-size: 3.4rem;
-		height: 7.7rem;
+		height: 7.8rem;
 	}
 
 	div:first-child {
@@ -140,7 +145,7 @@ body {
 
 	@media (min-width: 45rem) {
 		padding: 2rem;
-		row-gap: 1.8rem;
+		row-gap: 1.7rem;
 		column-gap: 1.5rem;
 	}
 
