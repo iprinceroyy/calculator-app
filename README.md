@@ -28,7 +28,7 @@ Users should be able to:
 
 |                  Solarized dark                  | Light                                            |
 | :----------------------------------------------: | :----------------------------------------------- |
-| ![](src/assets/design/mobile-design-theme-1.jpg) | ![](src/assets/design/mobile-design-theme-2.jpg) |
+| ![](./src/assets/design/mobile-design-theme-1.jpg) | ![](./src/assets/design/mobile-design-theme-2.jpg) |
 
 ### Links
 
