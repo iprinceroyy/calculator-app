@@ -45,7 +45,7 @@ Users should be able to:
 
 ### Continued development
 
-Sharpening my knowledge on ES6 classes as ES6 classes are one of the ways to achieve prototypal inheritance abstracting each functionality. This provides more flexibility writing code without interpolating other member functions.
+Sharpening my knowledge of ES6 classes as ES6 classes is one of the ways to achieve prototypal inheritance by abstracting each functionality. This provides more flexibility in writing code without interpolating other member functions.
 
 ## Author
 
