@@ -1,5 +1,4 @@
 import Calculator from './calculator';
-console.log('started.......');
 
 const prevOperandTextEl = document.querySelector('[data-previous-operand]');
 const currOperandTextEl = document.querySelector('[data-current-operand]');
@@ -15,51 +14,57 @@ class App extends Calculator {
 	constructor(prevOperandTextEl, currOperandTextEl) {
 		super(prevOperandTextEl, currOperandTextEl);
 
+		// Event listener is added to the element on object creation
 		toggler.addEventListener('input', this._toggleHandler.bind(this));
 		keypad.addEventListener('click', this._keyHandler.bind(this));
-		document.addEventListener('keydown', this._keydownHanlder.bind(this));
+		document.addEventListener('keydown', this._keydownHandler.bind(this));
 	}
 
+	/**
+	 * Handles click event on buttons
+	 * @param {Object} e - Event
+	 */
 	_keyHandler(e) {
+		if (!e.target.classList.contains('key')) return;
+
 		// Add audio to all buttons
 		btnAudio.play();
 		const btn = e.target;
 
-		if (btn.classList.contains('key_num')) {
-			super._appendNumber(btn.textContent);
-			super._updateDisplay();
-		} else if (btn.classList.contains('key_operation')) {
-			super._chooseOperation(btn.textContent);
-			super._updateDisplay();
-		} else if (btn.classList.contains('key_equal')) {
-			super._calculate();
-			super._updateDisplay();
-		} else if (btn.classList.contains('key_reset')) {
-			super._reset();
-			super._updateDisplay();
-		} else if (btn.classList.contains('key_delete')) {
-			super._delete();
-			super._updateDisplay();
-		}
+		if (btn.classList.contains('key_num')) super._appendNumber(btn.textContent);
+		else if (btn.classList.contains('key_operation')) super._chooseOperation(btn.textContent);
+		else if (btn.classList.contains('key_equal')) super._calculate();
+		else if (btn.classList.contains('key_reset')) super._reset();
+		else if (btn.classList.contains('key_delete')) super._delete();
+
+		super._updateDisplay();
 	}
 
-	_keydownHanlder(e) {
+	/**
+	 * Handles keypress event of keyboard
+	 * @param {Object} e - Event
+	 */
+	_keydownHandler(e) {
 		btnAudio.play();
 
-		if (isFinite(e.key)) super.appendNumber(e.key);
-		else if ('+-*/'.includes(e.key)) super.chooseOperation(e.key);
-		else if (e.key === '=' || e.key === 'Enter') super.calculate();
-		else if (e.key === 'Delete') super.reset();
-		else if (e.key === 'Backspace') super.delete();
+		if (isFinite(e.key)) super._appendNumber(e.key);
+		else if ('+-*/'.includes(e.key)) super._chooseOperation(e.key);
+		else if (e.key === '=' || e.key === 'Enter') super._calculate();
+		else if (e.key === 'Delete') super._reset();
+		else if (e.key === 'Backspace') super._delete();
 
-		super.updateDisplay();
+		super._updateDisplay();
 	}
 
+	/**
+	 * Handles toggle button
+	 * @param {Object} e - event
+	 */
 	_toggleHandler(e) {
-		toggleAudio.play();
 		const btn = e.target;
 		if (!btn.classList.contains('radio')) return;
 
+		toggleAudio.play();
 		const themeNum = btn.dataset.theme;
 
 		btn.closest('.radio_btns').lastElementChild.style.transform = `translateX(${

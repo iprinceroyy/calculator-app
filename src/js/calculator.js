@@ -6,6 +6,11 @@ class Calculator {
 	currOperandTextEl;
 	prevOperator = '';
 
+	/**
+	 * @param {Element} prevOperandTextEl
+	 * @param {Element} currOperandTextEl
+	 * @this {Object} an instance of Calculator
+	 */
 	constructor(prevOperandTextEl, currOperandTextEl) {
 		this.prevOperandTextEl = prevOperandTextEl;
 		this.currOperandTextEl = currOperandTextEl;
@@ -17,10 +22,16 @@ class Calculator {
 		this.operator = undefined;
 	}
 
+	// Delete digits one at a time from back
 	_delete() {
 		this.currentOperand = this.currentOperand.slice(0, -1);
 	}
 
+	/**
+	 * Append a number
+	 * @param {string | number} number
+	 * @protected
+	 */
 	_appendNumber(number) {
 		// Avoid multiple '.'
 		if (this.currentOperand.includes('.') && number === '.') return;
@@ -31,16 +42,27 @@ class Calculator {
 		this.currentOperand += number;
 	}
 
+	/**
+	 * Append operator to the current operand value &
+	 * make it previous operand in order to get second
+	 * operand for calculations
+	 * @param {string} operator
+	 * @protected
+	 */
 	_chooseOperation(operator) {
-		// If previous value exist then calculate first it
+		// If previous value exists then calculate it first
 		this.previousOperand && this._calculate();
 
 		this.operator = operator;
-		// If current operand is type
+		// If current operand is not blank, i.e. after operator second operand is being passed
 		if (this.currentOperand !== '') this.previousOperand = this.currentOperand;
 		this.currentOperand = '';
 	}
 
+	/**
+	 * Calculate the result and append it to the current operand
+	 * @protected
+	 */
 	_calculate() {
 		let computation;
 		const prev = parseFloat(this.previousOperand);
@@ -73,6 +95,11 @@ class Calculator {
 		this.previousOperand = '';
 	}
 
+	/**
+	 * Format the number
+	 * @param {string | number} number - A digit
+	 * @returns {number} Formatted number
+	 */
 	_formatNumber(number) {
 		const integerDigits = parseFloat(number.split('.')[0]);
 		const decimalDigits = number.split('.')[1];
@@ -85,6 +112,9 @@ class Calculator {
 		return decimalDigits != null ? `${integerDisplay}.${decimalDigits}` : integerDisplay;
 	}
 
+	/**
+	 * Update the result and display
+	 */
 	_updateDisplay() {
 		this.currOperandTextEl.innerText = this._formatNumber(this.currentOperand);
 
