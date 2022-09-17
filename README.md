@@ -55,6 +55,10 @@ Users should be able to:
 
 ### Running locally
 
+  From the repo:
+- Fork the repo
+- Clone it via command `git clone <URL of your forked repo>
+- cd <forked repo directory>
 - Type `npm i` in your bash/command line
 - Type `npm run build` in your bash/command line for production
 - Type `npm start` to start your local development server
