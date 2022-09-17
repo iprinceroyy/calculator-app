@@ -8,6 +8,8 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - Dependencies(#dependencies)
+  - Running this project locally(#running-locally)
   - [Continued development](#continued-development)
   - [Author](#author)
 
@@ -42,6 +44,20 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - ES6 classes
+
+### Dependencies
+
+- core-js
+- regenerator-runtime
+- sass
+- transformer-sass
+- parcel
+
+### Running locally
+
+- Type `npm i` in your bash/command line
+- Type `npm run build` in your bash/command line for production
+- Type `npm start` to start your local development server
 
 ### Continued development
 
