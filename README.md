@@ -8,8 +8,8 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - Dependencies(#dependencies)
-  - Running this project locally(#running-locally)
+  - [Dependencies](#dependencies)
+  - [Running this project locally](#running-locally)
   - [Continued development](#continued-development)
   - [Author](#author)
 
