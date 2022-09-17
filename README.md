@@ -2,15 +2,13 @@
 
 ## Table of contents
 
-- [Calculator app solution](#calculator-app-solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [Continued development](#continued-development)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
   - [Author](#author)
 
 ## Overview
@@ -26,9 +24,9 @@ Users should be able to:
 
 ### Screenshot
 
-|                  Solarized dark                  | Light                                            |
-| :----------------------------------------------: | :----------------------------------------------- |
-| ![](./src/assets/design/mobile-design-theme-1.jpg) | ![](./src/assets/design/mobile-design-theme-2.jpg) |
+|                  Solarized dark                  | Light                                            |  Purple
+| :----------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------------:|
+| ![](./src/assets/design/mobile-design-theme-1.jpg) | ![](./src/assets/design/mobile-design-theme-2.jpg) | ![](./src/assets/design/mobile-design-theme-3.jpg)
 
 ### Links
 
