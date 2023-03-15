@@ -2,15 +2,15 @@
 
 ## Table of contents
 
-- [Calculator app solution](#calculator-app-solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [Continued development](#continued-development)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Dependencies](#dependencies)
+  - [Running this project locally](#running-locally)
+  - [Continued development](#continued-development)
   - [Author](#author)
 
 ## Overview
@@ -26,9 +26,9 @@ Users should be able to:
 
 ### Screenshot
 
-|                  Solarized dark                  | Light                                            |
-| :----------------------------------------------: | :----------------------------------------------- |
-| ![](./src/assets/design/mobile-design-theme-1.jpg) | ![](./src/assets/design/mobile-design-theme-2.jpg) |
+|                  Solarized dark                  | Light                                            |  Purple
+| :----------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------------:|
+| ![](./src/assets/design/mobile-design-theme-1.jpg) | ![](./src/assets/design/mobile-design-theme-2.jpg) | ![](./src/assets/design/mobile-design-theme-3.jpg)
 
 ### Links
 
@@ -44,6 +44,24 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - ES6 classes
+
+### Dependencies
+
+- core-js
+- regenerator-runtime
+- sass
+- transformer-sass
+- parcel
+
+### Running locally
+
+  From the repo:
+- Fork the repo
+- Clone it via command `git clone <URL of your forked repo>
+- cd <forked repo directory>
+- Type `npm i` in your bash/command line
+- Type `npm run build` in your bash/command line for production
+- Type `npm start` to start your local development server
 
 ### Continued development
 
