@@ -82,3 +82,9 @@ class App extends Calculator {
 }
 
 const calculator = new App(prevOperandTextEl, currOperandTextEl);
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () =>
+		navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.url))
+	);
+}
