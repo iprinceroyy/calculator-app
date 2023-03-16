@@ -30,6 +30,8 @@ class App extends Calculator {
 	_keyHandler(e) {
 		if (!e.target.classList.contains('key')) return;
 
+		window.navigator.vibrate(500);
+
 		// Add audio to all buttons
 		btnAudio.volume = 0.06;
 		btnAudio.play();
