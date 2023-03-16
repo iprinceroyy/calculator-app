@@ -18,6 +18,9 @@ class App extends Calculator {
 		toggler.addEventListener('input', this._toggleHandler.bind(this));
 		keypad.addEventListener('click', this._keyHandler.bind(this));
 		document.addEventListener('keydown', this._keydownHandler.bind(this));
+
+		// Register service worker
+		this._registerServiceWorker();
 	}
 
 	/**
@@ -79,12 +82,18 @@ class App extends Calculator {
 		// Add current theme
 		bodyContainer.classList.add(`theme-${themeNum}`);
 	}
+
+	_registerServiceWorker() {
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () =>
+				navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.url))
+			);
+		}
+	}
 }
 
+/**
+ * Instance of an app is created &
+ * required event handlers get attached to the elements.
+ */
 const calculator = new App(prevOperandTextEl, currOperandTextEl);
-
-if ('serviceWorker' in navigator) {
-	window.addEventListener('load', () =>
-		navigator.serviceWorker.register(new URL('../../serviceWorker', import.meta.url))
-	);
-}
